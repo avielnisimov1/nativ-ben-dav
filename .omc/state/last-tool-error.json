@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"cd \\\"/Users/avielnisimov/Documents/programs/hebrew-typing/נתיב בן דוב\\\" && cat .vercel/project.json 2>/dev/null; echo \\\"---\\\"; ls -la .vercel/ 2>/dev/null\",\"description\":\"Check vercel proj...",
+  "error": "Exit code 1\n---",
+  "timestamp": "2026-04-14T19:21:36.317Z",
+  "retry_count": 4
+}
