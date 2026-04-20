@@ -1374,6 +1374,77 @@ h3 {
     margin-bottom: 28px;
 }
 
+/* ===== Cookie Banner ===== */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1500;
+    background: rgba(10, 10, 10, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border-light);
+    padding: 20px 0;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.cookie-banner.visible {
+    transform: translateY(0);
+}
+
+.cookie-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.cookie-content p {
+    font-size: 0.9rem;
+    color: var(--text-light-muted);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.cookie-content a {
+    color: var(--luxury-orange);
+    text-decoration: underline;
+}
+
+.cookie-actions {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.btn-sm {
+    padding: 10px 24px;
+    font-size: 0.85rem;
+}
+
+.btn-cookie-dismiss {
+    background: transparent;
+    color: var(--text-light-muted);
+    border-color: rgba(255,255,255,0.2);
+}
+
+.btn-cookie-dismiss:hover {
+    border-color: rgba(255,255,255,0.4);
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .cookie-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
 /* ===== Animations ===== */
 .fade-up {
     opacity: 0;
@@ -1429,7 +1500,20 @@ h3 {
 
 @media (max-width: 768px) {
     .section {
-        padding: 72px 0;
+        padding: 60px 0;
+    }
+
+    /* Navbar — smaller on mobile */
+    .navbar {
+        padding: 8px 0;
+    }
+
+    .navbar.scrolled {
+        padding: 6px 0;
+    }
+
+    .logo-img {
+        height: 50px;
     }
 
     .nav-links {
@@ -1444,75 +1528,183 @@ h3 {
         display: flex;
     }
 
+    /* Hero — compact on mobile */
+    .hero {
+        min-height: 90vh;
+    }
+
     .hero-content {
-        padding: 100px 0 60px;
+        padding: 80px 0 40px;
+    }
+
+    .hero-bg-img {
+        object-position: 60% 55%;
+    }
+
+    .hero-badge {
+        font-size: 0.8rem;
+        padding: 6px 16px;
+        margin-bottom: 16px;
+    }
+
+    .hero h1 {
+        font-size: 1.9rem;
+        margin-bottom: 14px;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 28px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 36px;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        max-width: 300px;
+        font-size: 0.95rem;
+        padding: 14px 24px;
     }
 
     .hero-stats {
-        gap: 24px;
+        gap: 20px;
+        padding-top: 28px;
     }
 
     .stat-number {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    .stat-divider {
+        height: 30px;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+    /* Problem section */
     .problem-grid {
         grid-template-columns: 1fr;
     }
 
+    .problem-card[style*="span 2"] {
+        grid-column: span 1 !important;
+    }
+
+    .problem-card {
+        padding: 24px;
+    }
+
+    .problem-bridge {
+        padding: 32px 24px;
+    }
+
+    /* Steps */
     .steps {
         flex-direction: column;
         align-items: center;
-        gap: 40px;
+        gap: 32px;
     }
 
     .step-connector {
         width: 2px;
-        height: 40px;
+        height: 32px;
         margin: 0;
     }
 
+    .step {
+        padding: 0 16px;
+    }
+
+    .step-number {
+        font-size: 2.5rem;
+        margin-bottom: 12px;
+    }
+
+    /* Achievements */
     .achievements-grid {
         grid-template-columns: 1fr;
     }
 
+    .achievement-card {
+        padding: 24px;
+    }
+
+    /* Gallery */
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
     }
 
     .gallery-item.gallery-wide {
         grid-column: span 2;
     }
 
+    /* FAQ */
+    .faq-question {
+        padding: 18px 20px;
+        font-size: 0.95rem;
+    }
+
+    .faq-answer p {
+        padding: 0 20px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* Form */
     .form-row {
         grid-template-columns: 1fr;
     }
 
     .contact-form {
-        padding: 32px 24px;
+        padding: 28px 20px;
     }
 
+    /* Footer */
     .footer-content {
         grid-template-columns: 1fr;
         gap: 32px;
     }
 
-    .hero-actions {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero-actions .btn {
-        width: 100%;
-        max-width: 300px;
+    .footer-bottom p {
+        font-size: 0.75rem;
+        line-height: 2;
     }
 
     .bridge-text {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
     }
 
     .bridge-text br {
         display: none;
+    }
+
+    /* Section headers */
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .section-desc {
+        font-size: 0.95rem;
+    }
+
+    /* About */
+    .about-image {
+        aspect-ratio: 4/3;
+    }
+
+    /* WhatsApp float — above cookie banner */
+    .whatsapp-float {
+        bottom: 80px;
     }
 }
 
@@ -1521,17 +1713,25 @@ h3 {
         padding: 0 16px;
     }
 
-    h1 {
-        font-size: 2.2rem;
+    .hero h1 {
+        font-size: 1.6rem;
     }
 
-    .hero-badge {
-        font-size: 0.8rem;
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .hero-stats {
+        gap: 14px;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
     }
 
     .gallery-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 8px;
+        gap: 6px;
     }
 
     .gallery-item.gallery-wide {
@@ -1540,15 +1740,15 @@ h3 {
     }
 
     .whatsapp-float {
-        bottom: 20px;
-        left: 20px;
-        width: 54px;
-        height: 54px;
+        bottom: 80px;
+        left: 16px;
+        width: 50px;
+        height: 50px;
     }
 
     .whatsapp-float svg {
-        width: 28px;
-        height: 28px;
+        width: 26px;
+        height: 26px;
     }
 
     .contact-buttons {
@@ -1559,5 +1759,17 @@ h3 {
     .contact-buttons .btn {
         width: 100%;
         max-width: 280px;
+    }
+
+    .method-card {
+        padding: 28px 20px;
+    }
+
+    .about-highlights .highlight span {
+        font-size: 0.9rem;
+    }
+
+    .testimonial-card {
+        padding: 24px;
     }
 }

@@ -1,3 +1,21 @@
+// ===== Cookie Banner =====
+function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'accepted');
+    document.getElementById('cookieBanner').classList.remove('visible');
+}
+
+function dismissCookies() {
+    localStorage.setItem('cookieConsent', 'dismissed');
+    document.getElementById('cookieBanner').classList.remove('visible');
+}
+
+// Show cookie banner if no consent stored
+if (!localStorage.getItem('cookieConsent')) {
+    setTimeout(() => {
+        document.getElementById('cookieBanner').classList.add('visible');
+    }, 1500);
+}
+
 // ===== Navbar Scroll Effect =====
 const navbar = document.getElementById('navbar');
 

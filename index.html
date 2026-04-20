@@ -534,7 +534,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 נתיב בן דב — כל הזכויות שמורות</p>
+                <p>&copy; 2026 נתיב בן דב — כל הזכויות שמורות | <a href="privacy.html" style="color: var(--text-light-muted); text-decoration: underline;">מדיניות פרטיות</a> | <a href="accessibility.html" style="color: var(--text-light-muted); text-decoration: underline;">הצהרת נגישות</a></p>
             </div>
         </div>
     </footer>
@@ -553,6 +553,17 @@
             <h3>הפרטים נשלחו בהצלחה!</h3>
             <p>נחזור אליכם בהקדם לתיאום שיעור ניסיון</p>
             <button class="btn btn-primary" onclick="document.getElementById('successModal').classList.remove('active')">סגור</button>
+        </div>
+    </div>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <p>אתר זה משתמש בעוגיות (cookies) כדי לשפר את חוויית הגלישה. המשך השימוש באתר מהווה הסכמה ל<a href="privacy.html">מדיניות הפרטיות</a> שלנו.</p>
+            <div class="cookie-actions">
+                <button class="btn btn-primary btn-sm" onclick="acceptCookies()">מאשר</button>
+                <button class="btn btn-cookie-dismiss btn-sm" onclick="dismissCookies()">דחה</button>
+            </div>
         </div>
     </div>
 
